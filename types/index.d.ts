@@ -5,4 +5,4 @@
  * 
  * @returns A `Promise` containing the output of the command. If the command failed, the error is passed into the `.catch` block.
  */
-export default function system(command: string): Promise<string>
+export default function(command: string): Promise<string>
