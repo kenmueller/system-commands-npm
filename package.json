@@ -1,0 +1,21 @@
+{
+	"name": "system-commands",
+	"version": "1.0.0",
+	"description": "System commands for JavaScript",
+	"main": "lib/index.min.js",
+	"types": "types/index.d.ts",
+	"scripts": {
+		"start": "tsc && node lib/index.js",
+		"test": "tsc && node tests/index.js"
+	},
+	"keywords": [
+		"system"
+	],
+	"author": "Ken Mueller",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^12.7.3",
+		"tslint": "^5.19.0",
+		"typescript": "^3.6.2"
+	}
+}
