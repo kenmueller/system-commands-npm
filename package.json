@@ -1,6 +1,6 @@
 {
 	"name": "system-commands",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "System commands for JavaScript",
 	"main": "lib/index.min.js",
 	"types": "types/index.d.ts",
@@ -9,7 +9,18 @@
 		"test": "tsc && node tests/index.js"
 	},
 	"keywords": [
-		"system"
+		"system-commands",
+		"system commands",
+		"system command",
+		"system",
+		"commands",
+		"run",
+		"run command",
+		"run-commands",
+		"run-command",
+		"node.js system",
+		"node system",
+		"ken mueller"
 	],
 	"author": "Ken Mueller",
 	"license": "MIT",
