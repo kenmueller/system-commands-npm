@@ -1,13 +1,33 @@
 {
 	"name": "system-commands",
-	"version": "1.0.1",
-	"description": "System commands for JavaScript",
+	"version": "1.0.2",
+	"description": "Run system commands in Node.js",
 	"main": "lib/index.min.js",
 	"types": "types/index.d.ts",
+	"directories": {
+		"lib": "lib",
+		"types": "types",
+		"test": "tests"
+	},
+	"devDependencies": {
+		"@types/node": "^12.7.3",
+		"tslint": "^5.19.0",
+		"typescript": "^3.6.2"
+	},
 	"scripts": {
 		"start": "tsc && node lib/index.js",
 		"test": "tsc && node tests/index.js"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kenmueller/system-commands-npm.git"
+	},
+	"author": "Ken Mueller",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/kenmueller/system-commands-npm/issues"
+	},
+	"homepage": "https://github.com/kenmueller/system-commands-npm#readme",
 	"keywords": [
 		"system-commands",
 		"system commands",
@@ -21,12 +41,5 @@
 		"node.js system",
 		"node system",
 		"ken mueller"
-	],
-	"author": "Ken Mueller",
-	"license": "MIT",
-	"devDependencies": {
-		"@types/node": "^12.7.3",
-		"tslint": "^5.19.0",
-		"typescript": "^3.6.2"
-	}
+	]
 }
