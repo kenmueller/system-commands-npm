@@ -39,6 +39,12 @@ function system(command: string): Promise<string>
 **Run the command `ls`:**
 
 ```typescript
+// async/await
+
+console.log(await system('ls'))
+
+// Handling errors
+
 system('ls').then(output => {
 	// Log the output
 	console.log(output)
@@ -75,7 +81,7 @@ system('mkdir new_directory').then(() => {
 	console.log('Successfully created new_directory')
 }).catch(error => {
 	// Oh no! An error occurred
-	console.log(error)
+	console.error(error)
 })
 
 // Output:
