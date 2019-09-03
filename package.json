@@ -1,6 +1,6 @@
 {
 	"name": "system-commands",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "Run system commands in Node.js",
 	"main": "lib/index.min.js",
 	"types": "types/index.d.ts",
@@ -11,12 +11,17 @@
 	},
 	"devDependencies": {
 		"@types/node": "^12.7.3",
+		"babel-minify": "^0.5.1",
+		"jest": "^24.9.0",
 		"tslint": "^5.19.0",
 		"typescript": "^3.6.2"
 	},
 	"scripts": {
-		"start": "tsc && node lib/index.js",
-		"test": "tsc && node tests/index.js"
+		"build": "tsc",
+		"minify": "node_modules/.bin/babel-minify lib/index.js -o lib/index.min.js",
+		"prepublishOnly": "npm run build && npm run minify",
+		"start": "node lib/index.js",
+		"test": "jest --verbose tests"
 	},
 	"repository": {
 		"type": "git",
