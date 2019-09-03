@@ -7,10 +7,8 @@ const removeLastNewline = (str: string): string =>
 	str.replace(/\n$/, '')
 
 module.exports = (command: string): Promise<string> =>
-	runCommand(command).then(({ stdout, stderr }) =>
-		stderr
-			? Promise.reject(stderr)
-			: Promise.resolve(removeLastNewline(stdout))
+	runCommand(command).then(({ stdout }) =>
+		removeLastNewline(stdout)
 	).catch((error: any) =>
-		removeLastNewline(error.stderr || error)
+		Promise.reject(removeLastNewline(error.stderr))
 	)
