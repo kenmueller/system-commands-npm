@@ -17,7 +17,7 @@ const system = require('system-commands')
 ### **TypeScript**
 
 ```typescript
-import * as system from 'system-commands'
+import system = require('system-commands')
 ```
 
 ## **Tutorial**

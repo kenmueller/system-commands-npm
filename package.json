@@ -1,6 +1,6 @@
 {
 	"name": "system-commands",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Run system commands in Node.js",
 	"main": "lib/index.min.js",
 	"types": "types/index.d.ts",
