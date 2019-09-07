@@ -19,3 +19,33 @@ it('handles no output', async done => {
 		done.fail(`.catch statement was called: ${error}`)
 	}
 })
+
+it('lists files', async done => {
+	try {
+		const files = await system.listFiles(__dirname)
+		expect(files).toStrictEqual(['index.test.js'])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})
+
+it('lists files ending in test.js', async done => {
+	try {
+		const files = await system.listFiles(__dirname, { extension: 'test.js' })
+		expect(files).toStrictEqual(['index.test.js'])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})
+
+it('lists no files files ending in ts', async done => {
+	try {
+		const files = await system.listFiles(__dirname, { extension: 'ts' })
+		expect(files).toStrictEqual([])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})

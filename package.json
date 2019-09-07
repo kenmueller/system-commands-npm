@@ -17,11 +17,11 @@
 		"typescript": "^3.6.2"
 	},
 	"scripts": {
-		"build": "tsc",
+		"build": "node_modules/.bin/tsc",
 		"minify": "node_modules/.bin/babel-minify lib/index.js -o lib/index.min.js",
 		"prepublishOnly": "npm run build && npm run minify",
 		"start": "node lib/index.js",
-		"test": "jest --verbose tests"
+		"test": "node_modules/.bin/jest --verbose tests"
 	},
 	"repository": {
 		"type": "git",
