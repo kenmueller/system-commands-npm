@@ -30,9 +30,9 @@ it('lists files', async done => {
 	}
 })
 
-it('lists files ending in test.js', async done => {
+it('lists files ending in js', async done => {
 	try {
-		const files = await system.listFiles(__dirname, { extension: 'test.js' })
+		const files = await system.listFiles(__dirname, { extension: 'js' })
 		expect(files).toStrictEqual(['index.test.js'])
 		done()
 	} catch (error) {
@@ -44,6 +44,46 @@ it('lists no files files ending in ts', async done => {
 	try {
 		const files = await system.listFiles(__dirname, { extension: 'ts' })
 		expect(files).toStrictEqual([])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})
+
+it('lists files recursively', async done => {
+	try {
+		const files = await system.listFilesRecursive(__dirname, { extension: 'js' })
+		expect(files).toStrictEqual(['folder/hi.js', 'index.test.js'])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})
+
+it('excludes files from list recursive', async done => {
+	try {
+		const files = await system.listFilesRecursive(__dirname, { extension: 'js', exclude: ['folder'] })
+		expect(files).toStrictEqual(['index.test.js'])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})
+
+it('matches filenames from list recursive', async done => {
+	try {
+		const files = await system.listFilesRecursive(__dirname, { extension: 'js', pattern: /test/ })
+		expect(files).toStrictEqual(['index.test.js'])
+		done()
+	} catch (error) {
+		done.fail(`.catch statement was called: ${error}`)
+	}
+})
+
+it('handles depth in list recursive', async done => {
+	try {
+		const files = await system.listFilesRecursive(__dirname, { extension: 'js', depth: 1 })
+		expect(files).toStrictEqual(['index.test.js'])
 		done()
 	} catch (error) {
 		done.fail(`.catch statement was called: ${error}`)

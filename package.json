@@ -46,5 +46,8 @@
 		"node.js system",
 		"node system",
 		"ken mueller"
-	]
+	],
+	"dependencies": {
+		"escape-string-regexp": "^2.0.0"
+	}
 }
